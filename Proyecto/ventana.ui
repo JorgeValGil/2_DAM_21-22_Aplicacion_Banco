@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Banco DI</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>banco.ico</normaloff>banco.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>791</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_cuentas">
+     <attribute name="title">
+      <string>Cuentas</string>
+     </attribute>
+     <widget class="QLineEdit" name="lineEdit_ncuenta">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>30</y>
+        <width>250</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Formato: ES3200789398504222542001</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Recargar_Cuenta">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>0</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Recargar Tabla</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="img/reload.qrc">
+        <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Buscar_Cuenta">
+      <property name="geometry">
+       <rect>
+        <x>445</x>
+        <y>20</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Buscar Cuenta</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="img/lupa.qrc">
+        <normaloff>:/lupa/lupa.png</normaloff>:/lupa/lupa.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_ncuenta">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>35</y>
+        <width>72</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nº de Cuenta:</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableCuentas">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>701</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Tabla Cuenta</string>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Número de Cuenta</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Cliente Titular</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Saldo</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>440</y>
+        <width>761</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_botones_inferiores_2" stretch="0,0,0,0,0">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="Alta_Cuenta">
+         <property name="toolTip">
+          <string>Dar de Alta una Cuenta</string>
+         </property>
+         <property name="text">
+          <string>Alta</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/alta_cuenta.qrc">
+           <normaloff>:/alta_cuenta/alta_cuenta.png</normaloff>:/alta_cuenta/alta_cuenta.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Modificar_Cuenta">
+         <property name="toolTip">
+          <string>Modificar Cuenta</string>
+         </property>
+         <property name="text">
+          <string>Modificar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/modificar.qrc">
+           <normaloff>:/modificar/modificar.png</normaloff>:/modificar/modificar.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Eliminar_Cuenta">
+         <property name="toolTip">
+          <string>Eliminar Cuenta</string>
+         </property>
+         <property name="text">
+          <string>Eliminar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/eliminar.qrc">
+           <normaloff>:/eliminar/eliminar.png</normaloff>:/eliminar/eliminar.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Limpiar_Cuenta">
+         <property name="toolTip">
+          <string>Limpiar Campos Cuentas</string>
+         </property>
+         <property name="text">
+          <string>Limpiar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/limpiar.qrc">
+           <normaloff>:/limpiar/limpiar.png</normaloff>:/limpiar/limpiar.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Salir_Cuenta">
+         <property name="toolTip">
+          <string>Salir</string>
+         </property>
+         <property name="text">
+          <string>Salir</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/salir.qrc">
+           <normaloff>:/salir/salir.png</normaloff>:/salir/salir.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_cuenta_cliente">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>95</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cliente Titular</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbClienteTitular">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>90</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Seleccionar Cliente</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_status_cuenta">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>761</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_cuenta_saldo">
+      <property name="geometry">
+       <rect>
+        <x>507</x>
+        <y>95</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Saldo:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_cuenta_saldo">
+      <property name="geometry">
+       <rect>
+        <x>557</x>
+        <y>90</y>
+        <width>125</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Formato: 100</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_cuenta_valid">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>20</y>
+        <width>47</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bernard MT Condensed</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_Clientes">
+     <attribute name="title">
+      <string>Clientes</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>440</y>
+        <width>761</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_botones_inferiores" stretch="0,0,0,0,0">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="Alta_Cliente">
+         <property name="toolTip">
+          <string>Dar de Alta un Cleinte</string>
+         </property>
+         <property name="text">
+          <string>Alta</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/alta.qrc">
+           <normaloff>:/alta/alta.png</normaloff>:/alta/alta.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Modificar_Cliente">
+         <property name="toolTip">
+          <string>Modificar Cliente</string>
+         </property>
+         <property name="text">
+          <string>Modificar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/modificar.qrc">
+           <normaloff>:/modificar/modificar.png</normaloff>:/modificar/modificar.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Eliminar_Cliente">
+         <property name="toolTip">
+          <string>Eliminar Cliente</string>
+         </property>
+         <property name="text">
+          <string>Eliminar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/eliminar.qrc">
+           <normaloff>:/eliminar/eliminar.png</normaloff>:/eliminar/eliminar.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Limpiar_Cliente">
+         <property name="toolTip">
+          <string>Limpiar Campos Clientes</string>
+         </property>
+         <property name="text">
+          <string>Limpiar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/limpiar.qrc">
+           <normaloff>:/limpiar/limpiar.png</normaloff>:/limpiar/limpiar.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Salir_Cliente">
+         <property name="toolTip">
+          <string>Salir</string>
+         </property>
+         <property name="text">
+          <string>Salir</string>
+         </property>
+         <property name="icon">
+          <iconset resource="img/salir.qrc">
+           <normaloff>:/salir/salir.png</normaloff>:/salir/salir.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="Recargar">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>0</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Recargar Tabla</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="img/reload.qrc">
+        <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_dni">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>35</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DNI:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_dni">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>30</y>
+        <width>115</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Formato: 11111111H</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Buscar">
+      <property name="geometry">
+       <rect>
+        <x>275</x>
+        <y>20</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Buscar Cliente</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="img/lupa.qrc">
+        <normaloff>:/lupa/lupa.png</normaloff>:/lupa/lupa.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_apellido">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>80</y>
+        <width>115</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Introducir Apellidos</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_apellido">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>85</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Apellidos:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_nombre">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>80</y>
+        <width>115</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Introducir Nombre</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_nombre">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>85</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nombre:</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableClientes">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>701</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Tabla Clientes</string>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>DNI</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Apellidos</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nombre</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_status_cliente">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>761</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_dni_valid">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>20</y>
+        <width>47</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bernard MT Condensed</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_movimientos">
+     <attribute name="title">
+      <string>Movimientos</string>
+     </attribute>
+     <widget class="QLabel" name="label_movimiento_cuenta">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>35</y>
+        <width>75</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nº de Cuenta:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbMovimiento_cuenta">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>30</y>
+        <width>231</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Seleccionar Numero de Cuenta</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbMovimiento_tipo">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>30</y>
+        <width>150</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Seleccionar Tipo de Movimiento</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_movimiento_tipo">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>35</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Tipo:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_movimiento_importe">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>85</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Importe:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_status_movimiento">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>761</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_movimiento_importe">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>80</y>
+        <width>120</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Formato: 100</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableMovimientos">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>701</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Tabla Movimientos</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Número de Cuenta</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Tipo de Movimeinto</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Importe</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="Recargar_movimiento">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>0</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Recargar Tabla</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="img/reload.qrc">
+        <normaloff>:/reload/reload.png</normaloff>:/reload/reload.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Alta_Movimiento">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>452</y>
+        <width>144</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Dar de Alta un Movimiento</string>
+      </property>
+      <property name="text">
+       <string>Alta</string>
+      </property>
+      <property name="icon">
+       <iconset resource="img/alta_movimiento.qrc">
+        <normaloff>:/alta_movimiento/alta_movimiento.png</normaloff>:/alta_movimiento/alta_movimiento.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Salir_Movimiento">
+      <property name="geometry">
+       <rect>
+        <x>524</x>
+        <y>450</y>
+        <width>144</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Salir</string>
+      </property>
+      <property name="text">
+       <string>Salir</string>
+      </property>
+      <property name="icon">
+       <iconset resource="img/salir.qrc">
+        <normaloff>:/salir/salir.png</normaloff>:/salir/salir.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Limpiar_Movimiento">
+      <property name="geometry">
+       <rect>
+        <x>309</x>
+        <y>450</y>
+        <width>144</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Limpiar Campos Movimientos</string>
+      </property>
+      <property name="text">
+       <string>Limpiar</string>
+      </property>
+      <property name="icon">
+       <iconset resource="img/limpiar.qrc">
+        <normaloff>:/limpiar/limpiar.png</normaloff>:/limpiar/limpiar.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_Datos">
+     <attribute name="title">
+      <string>Datos</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableDatos">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>80</y>
+        <width>701</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Tabla Movimientos Cuenta</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Número de Cuenta</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Tipo de Movimiento</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Importe</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_status_datos">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>761</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_datos">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>35</y>
+        <width>165</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Selecciona una cuenta bancaria:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_datos_cuenta">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>30</y>
+        <width>360</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Seleccionar Cuenta Bancaria</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Limpiar_Dato">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>452</y>
+        <width>144</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Limpiar Campos Datos</string>
+      </property>
+      <property name="text">
+       <string>Limpiar</string>
+      </property>
+      <property name="icon">
+       <iconset resource="img/limpiar.qrc">
+        <normaloff>:/limpiar/limpiar.png</normaloff>:/limpiar/limpiar.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Salir_Dato">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>452</y>
+        <width>144</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Salir</string>
+      </property>
+      <property name="text">
+       <string>Salir</string>
+      </property>
+      <property name="icon">
+       <iconset resource="img/salir.qrc">
+        <normaloff>:/salir/salir.png</normaloff>:/salir/salir.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Buscar_Dato">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>20</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Buscar Movimientos Cuenta</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="img/lupa.qrc">
+        <normaloff>:/lupa/lupa.png</normaloff>:/lupa/lupa.png</iconset>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actioninformepdf"/>
+  </widget>
+  <action name="actioninformepdf">
+   <property name="icon">
+    <iconset resource="img/informepdf.qrc">
+     <normaloff>:/informepdf/informe-pdf.png</normaloff>:/informepdf/informe-pdf.png</iconset>
+   </property>
+   <property name="text">
+    <string>informepdf</string>
+   </property>
+   <property name="toolTip">
+    <string>Generar Informe PDF</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="img/salir.qrc"/>
+  <include location="img/alta_cuenta.qrc"/>
+  <include location="img/alta.qrc"/>
+  <include location="img/alta_movimiento.qrc"/>
+  <include location="img/modificar.qrc"/>
+  <include location="img/eliminar.qrc"/>
+  <include location="img/limpiar.qrc"/>
+  <include location="img/reload.qrc"/>
+  <include location="img/lupa.qrc"/>
+  <include location="img/informepdf.qrc"/>
+ </resources>
+ <connections/>
+</ui>

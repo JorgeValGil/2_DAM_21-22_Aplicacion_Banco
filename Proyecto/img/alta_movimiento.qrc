@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="alta_movimiento">
+    <file>alta_movimiento.png</file>
+  </qresource>
+</RCC>

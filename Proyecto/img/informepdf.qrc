@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="informepdf">
+    <file>informe-pdf.png</file>
+  </qresource>
+</RCC>

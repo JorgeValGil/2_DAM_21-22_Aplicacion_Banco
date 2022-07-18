@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="alta_cuenta">
+    <file>alta_cuenta.png</file>
+  </qresource>
+</RCC>

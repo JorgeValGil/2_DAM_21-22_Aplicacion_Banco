@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="alta">
+    <file>alta.png</file>
+  </qresource>
+</RCC>

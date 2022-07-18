@@ -1,0 +1,1 @@
+Este es el archivo que se muestra en el inicio de la instalacion del programa Banco DI creado por Jorge Val Gil
